@@ -1,0 +1,35 @@
+{% extends "gisapp/index.html" %}
+
+{% block map %}
+<div class="login-form">
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+      <h1>Sign up</h1>
+      <div class="content">
+        <div class="input-field">
+            <input type="text" placeholder="User name" name="username" autocomplete="nope">
+          </div>
+        <div class="input-field">
+            <input type="text" placeholder="First Name" name="firstname" autocomplete="nope">
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Last Name" name="lastname" autocomplete="nope">
+          </div>
+        <div class="input-field">
+          <input type="email" placeholder="Email" name="email" autocomplete="nope">
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" name="password" autocomplete="nope">
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Re Enter Password" name="confmpsswd" autocomplete="nope">
+          </div>
+        <a href="{% url 'login' %}" class="link">Already Have an account?</a>
+      </div>
+      <div class="action">
+        <button type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
